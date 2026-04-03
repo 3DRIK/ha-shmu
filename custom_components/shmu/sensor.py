@@ -112,8 +112,10 @@ class SHMUMeteogramSensor(CoordinatorEntity, SensorEntity):
         else:
             date = now.strftime("%Y%m%d")
             time = "1200"
-        return f"https://www.shmu.sk/data/datanwp/v2/meteogram/al-meteogram_{self._meteogram_id}-{date}-{time}-nwp-.png"
-
+        return (
+            f"https://www.shmu.sk/data/datanwp/v2/meteogram/al-meteogram_{self._meteogram_id}-{date}-{time}-nwp-.png",
+            f"https://www.shmu.sk/data/datanwp/v2/ecmgram/al-ecmgram_{self._meteogram_id}-{date}-{time}-nwp-.png"
+            )
     @property
     def native_value(self):
         """Return the meteogram URL."""
@@ -122,7 +124,8 @@ class SHMUMeteogramSensor(CoordinatorEntity, SensorEntity):
     @property
     def extra_state_attributes(self):
         """Return the attributes for the meteogram URL."""
-        return {"meteogram_url": self._generate_meteogram_url()}
+        meteo3, meteo10 = self._generate_meteogram_url()
+        return {"meteogram_3d_url": meteo3, "meteogram_10d_url": meteo10}
 
 async def async_setup_entry(hass, config_entry, async_add_entities):
     """Set up the SHMU sensors."""
@@ -178,7 +181,7 @@ async def async_setup_entry(hass, config_entry, async_add_entities):
             coordinator=coordinator,
             sensor_key="sln_trv",
             name="Sun duration/min",
-            unit="sec",
+            unit="s",
             device_class=None,
             state_class=SensorStateClass.MEASUREMENT,
             icon="mdi:sun-clock",
@@ -195,8 +198,8 @@ async def async_setup_entry(hass, config_entry, async_add_entities):
         SHMUSensor(
             coordinator=coordinator,
             sensor_key="zra_trv",
-            name="Precipitation duration",
-            unit="sec",
+            name="Precipitation duration/min",
+            unit="s",
             device_class=None,
             state_class=SensorStateClass.MEASUREMENT,
             icon="mdi:weather-rainy",
