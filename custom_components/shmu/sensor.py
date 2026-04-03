@@ -103,22 +103,29 @@ class SHMUMeteogramSensor(CoordinatorEntity, SensorEntity):
         if now.hour < 6:
             date = (now - timedelta(days=1)).strftime("%Y%m%d")
             time = "1600"
-            time10 = "1200"
         elif now.hour < 12:
             date = now.strftime("%Y%m%d")
             time = "0000"
-            time10 = "0000"
         elif now.hour < 17:
             date = now.strftime("%Y%m%d")
             time = "0600"
-            time10 = "0000"
         else:
             date = now.strftime("%Y%m%d")
             time = "1200"
+            
+        if now.hour < 10:
+            date10 = (now - timedelta(days=1)).strftime("%Y%m%d")
             time10 = "1200"
+        elif now.hour < 22:
+            date10 = now.strftime("%Y%m%d")
+            time10 = "0000"
+        else:
+            date10 = now.strftime("%Y%m%d")
+            time10 = "1200"
+            
         return (
             f"https://www.shmu.sk/data/datanwp/v2/meteogram/al-meteogram_{self._meteogram_id}-{date}-{time}-nwp-.png",
-            f"https://www.shmu.sk/data/datanwp/v2/ecmgram/al-ecmgram_{self._meteogram_id}-{date}-{time10}-nwp-.png"
+            f"https://www.shmu.sk/data/datanwp/v2/ecmgram/al-ecmgram_{self._meteogram_id}-{date10}-{time10}-nwp-.png"
             )
     @property
     def native_value(self):
