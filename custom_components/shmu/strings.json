@@ -1,1 +1,36 @@
-
+{
+  "title": {
+    "sk": "Slovenský hydrometeorologický ústav (SHMU)",
+    "en": "Slovak Hydrometeorological Institute (SHMU)"
+  },
+  "configuration": {
+    "sk": {
+      "station_id": {
+        "name": "ID stanice",
+        "description": "Zadajte ID meteorologickej stanice (napr. 11813 pre Bratislava)."
+      },
+      "scan_interval": {
+        "name": "Interval aktualizácie (sekundy)",
+        "description": "Interval v sekundách, ako často sa majú dáta aktualizovať."
+      },
+      "verify_ssl": {
+        "name": "Overovať SSL certifikáty",
+        "description": "Zapnite, ak chcete overovať SSL certifikáty (odporúčané)."
+      }
+    },
+    "en": {
+      "station_id": {
+        "name": "Station ID",
+        "description": "Enter the meteorological station ID (e.g., 11813 for Bratislava)."
+      },
+      "scan_interval": {
+        "name": "Scan Interval (seconds)",
+        "description": "Interval in seconds for how often data should be updated."
+      },
+      "verify_ssl": {
+        "name": "Verify SSL Certificates",
+        "description": "Enable to verify SSL certificates (recommended)."
+      }
+    }
+  }
+}
