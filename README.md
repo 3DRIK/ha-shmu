@@ -42,6 +42,8 @@ The integration creates device with the following sensors:
 - Precipitation duration/min (s)
 - Meteogram url (containing meteogram image url for 3 and 10 days in attributes)
 
+[You can find a description of the attributes here](https://opendata.shmu.sk/meteorology/climate/now/metadata/aws1min-metadata.txt)
+
 ## Meteogram
 
 The integration provides URL for camera entity for the meteogram image, which updates automatically based on the current time. URL is available as a sensor atribute.
