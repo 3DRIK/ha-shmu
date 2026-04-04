@@ -2,6 +2,7 @@
 # SHMU Integration for Home Assistant
 
 This integration fetches meteorological data from the [Slovenský hydrometeorologický ústav (SHMU)](https://www.shmu.sk/) and provides sensors for temperature, humidity, pressure, wind speed, and wind direction. It also generates a meteogram image URL.
+This is only integration, all data is provided by [SHMU Open Data](https://opendata.shmu.sk/).
 
 ## Installation
 
@@ -23,8 +24,8 @@ This integration fetches meteorological data from the [Slovenský hydrometeorolo
 | Scan Interval  | How often (in seconds) the data should be updated (default: 300 seconds).  |
 | Verify SSL     | Verifying SHMU API SSL (recommended).                                      |
 
-- You can find your nearest station at `https://www.shmu.sk/sk//?page=1&id=meteo_apocasie_sk` with ID in URL.
-- You can find Meteogram locations at `https://www.shmu.sk/sk/?page=769` with ID in URL.
+- You can find your nearest station at [https://www.shmu.sk/sk//?page=1&id=meteo_apocasie_sk](SHMU Stations) with ID in URL.
+- You can find Meteogram locations at [https://www.shmu.sk/sk/?page=769](SHMU Meteograms) with ID in URL.
 
 ## Sensors
 
@@ -54,5 +55,5 @@ or for 10d meteogram:
 
 - Ensure your station ID is correct.
 - Check the logs for errors if sensors are unavailable.
-- For some stations, data or selected attributes are not available.
+- For some stations, data or some attributes are not available.
 - Sometimes there may be a delay in the publication of data or a longer period with no data published.
