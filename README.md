@@ -24,8 +24,8 @@ This is only integration, all data is provided by [SHMU Open Data](https://opend
 | Scan Interval  | How often (in seconds) the data should be updated (default: 300 seconds).  |
 | Verify SSL     | Verifying SHMU API SSL (recommended).                                      |
 
-- You can find your nearest station at [https://www.shmu.sk/sk//?page=1&id=meteo_apocasie_sk](SHMU Stations) with ID in URL.
-- You can find Meteogram locations at [https://www.shmu.sk/sk/?page=769](SHMU Meteograms) with ID in URL.
+- You can find your nearest station at [SHMU Stations](https://www.shmu.sk/sk//?page=1&id=meteo_apocasie_sk) with ID in URL.
+- You can find Meteogram locations at [SHMU Meteograms](https://www.shmu.sk/sk/?page=769) with ID in URL.
 
 ## Sensors
 
