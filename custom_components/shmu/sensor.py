@@ -102,7 +102,7 @@ class SHMUMeteogramSensor(CoordinatorEntity, SensorEntity):
         now = datetime.now()
         if now.hour < 6:
             date = (now - timedelta(days=1)).strftime("%Y%m%d")
-            time = "1600"
+            time = "1800"
         elif now.hour < 12:
             date = now.strftime("%Y%m%d")
             time = "0000"
